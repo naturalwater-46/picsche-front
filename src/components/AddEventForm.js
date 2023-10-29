@@ -50,13 +50,13 @@ const StyledButton = styled.button`
   border-radius: 4px;
   cursor: pointer;
   &:hover {
-    background-color: #0056b3;
+    background-color: #ddd;
   }
 `;
 
 const CancelButton = styled(StyledButton)`
   &:hover {
-    background-color: #c82333;
+    background-color: #ddd;
   }
   margin-left: 10px;
 `;

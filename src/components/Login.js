@@ -5,6 +5,8 @@ import {
 } from '../firebase';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import gLogo from './image/g-logo.png';
+
 
 const Container = styled.div`
     display: flex;
@@ -15,7 +17,7 @@ const Container = styled.div`
     border-radius: 10px;
     width: 90%;
     max-width: 300px;
-    margin: 50px auto;
+    margin: 100px auto;
 
     @media (min-width: 768px) {
         width: 60%;
@@ -30,13 +32,20 @@ const Container = styled.div`
     }
 `;
 
+const Title = styled.h1`
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #333;
+`;
 
 const StyledButton = styled.button`
     margin: 10px 0;
     padding: 10px 20px;
-    border: none;
+    border: 2px solid #000; 
+    background-color: #fff; 
     border-radius: 5px;
-    width: 60%;
+    width: 75%;
+    font-size: 16px;
     cursor: pointer;
     &:hover {
         background-color: #ddd;
@@ -50,6 +59,18 @@ const InputField = styled.input`
     border: 1px solid #e0e0e0;
     font-size: 16px;
 `;
+
+
+const StyledGoogleLogo = styled.img`
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    vertical-align: middle;
+    &:hover {
+        background-color: #ddd;
+    }
+`;
+
 
 const StyledLink = styled(Link)`
     margin-top: 20px;
@@ -127,6 +148,7 @@ function Login() {
 
     return (
         <Container>
+            <Title>Picsche</Title>
             <InputField
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -139,7 +161,11 @@ function Login() {
                 placeholder="パスワード"
             />
             <StyledButton onClick={handleEmailPasswordLogin}>ログイン</StyledButton>
-            <StyledButton onClick={handleGoogleLogin}>Googleでログイン</StyledButton>
+            <StyledButton onClick={handleGoogleLogin}>
+                <StyledGoogleLogo src={gLogo} alt="Google Logo" style={{ marginRight: "8px", verticalAlign: "middle" }} />
+                Googleでログイン
+            </StyledButton>
+
             <StyledLink to="/signup">アカウントをお持ちでない方はこちら</StyledLink>
         </Container>
     );

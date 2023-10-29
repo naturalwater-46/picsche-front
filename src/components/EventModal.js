@@ -46,7 +46,7 @@ const StyledButton = styled.button`
   border-radius: 4px;
   cursor: pointer;
   &:hover {
-    background-color: #0056b3;
+    background-color: #ddd;
   }
 `;
 
@@ -109,28 +109,28 @@ function EventModal({ event, onClose, onDelete, onEdit }) {
                 <h2>予定詳細</h2>
                 <form onSubmit={handleEditSubmit}>
                     <FormField>
-                        <label>タイトル:
+                        <label>
                             <StyledInput
                                 type="text"
                                 value={editedTitle}
-                                onChange={e => setEditedTitle(e.target.value)}
+                                onChange={e => setEditedTitle(e.target.value)} placeholder="タイトルを入力"
                             />
                         </label>
                     </FormField>
 
                     <FormField>
-                        <label>場所:
+                        <label>
                             <StyledInput
                                 type="text"
                                 value={editedLocation}
-                                onChange={e => setEditedLocation(e.target.value)}
+                                onChange={e => setEditedLocation(e.target.value)} placeholder="場所を入力"
                             />
                         </label>
                     </FormField>
 
                     <DateAndTimeContainer>
                         <HalfWidthField>
-                            <label>開始日付:
+                            <label>開始日
                                 <StyledInput
                                     type="date"
                                     value={editedDate}
@@ -140,7 +140,7 @@ function EventModal({ event, onClose, onDelete, onEdit }) {
                         </HalfWidthField>
 
                         <HalfWidthField>
-                            <label>開始時間:
+                            <label>開始時間
                                 <StyledInput
                                     type="time"
                                     value={editedStartTime}
@@ -152,7 +152,7 @@ function EventModal({ event, onClose, onDelete, onEdit }) {
 
                     <DateAndTimeContainer>
                         <HalfWidthField>
-                            <label>終了日付:
+                            <label>終了日付
                                 <StyledInput
                                     type="date"
                                     value={editedEndDate}
@@ -162,7 +162,7 @@ function EventModal({ event, onClose, onDelete, onEdit }) {
                         </HalfWidthField>
 
                         <HalfWidthField>
-                            <label>終了時間:
+                            <label>終了時間
                                 <StyledInput
                                     type="time"
                                     value={editedEndTime}
@@ -175,20 +175,20 @@ function EventModal({ event, onClose, onDelete, onEdit }) {
 
 
                     <FormField>
-                        <label>URL:
+                        <label>
                             <StyledInput
                                 type="url"
                                 value={editedUrl}
-                                onChange={handleUrlChange}
+                                onChange={handleUrlChange} placeholder="URLを入力"
                             />
                         </label>
                     </FormField>
 
                     <FormField>
-                        <label>メモ:
+                        <label>
                             <StyledTextArea
                                 value={editedMemo}
-                                onChange={e => setEditedMemo(e.target.value)}
+                                onChange={e => setEditedMemo(e.target.value)} placeholder="メモを入力"
                             ></StyledTextArea>
                         </label>
                     </FormField>
